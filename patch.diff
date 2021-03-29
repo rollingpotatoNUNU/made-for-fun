@@ -1,0 +1,43 @@
+From 03d7cf15c150161d5d52101eed9bf12b8a47ff05 Mon Sep 17 00:00:00 2001
+From: NuNupotato <kimhaeb31@gmail.com>
+Date: Sun, 28 Mar 2021 15:00:29 +0900
+Subject: [PATCH] =?UTF-8?q?=EC=9B=90=EB=A6=AC=EA=B8=88=20=EA=B3=84?=
+ =?UTF-8?q?=EC=82=B0=EA=B8=B0(=EB=B3=B5=EB=A6=AC/=EB=8B=A8=EB=A6=AC)?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ calculator.py | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+ create mode 100644 calculator.py
+
+diff --git a/calculator.py b/calculator.py
+new file mode 100644
+index 0000000..3263629
+--- /dev/null
++++ b/calculator.py
+@@ -0,0 +1,20 @@
++print('Welcome!This is your principal and interest calculator')
++p=float(input('Principal: '))
++r=float(input('interest rate:'))
++n=float(input('How many times the interest is yielded for a year?'))
++t=float(input('How many years do you want to deposit your money?'))
++k=int(input('what kind of interst you want? (1: simple 2:compound)'))
++
++def simple(p,r,n):
++    return p(1+r*n)
++
++def compound(p,r,n,t):
++    return p*(1+r/n)**(n*t)
++
++if k==1:
++    print('the amount of principal and interest is:', simple(p,r,n))
++elif k==2:
++    print('the amount of principal and interest is:', compound(p,r,n,t))
++else:
++    print('Please check your interest type again!')
++
+-- 
+2.31.0.windows.1
+
