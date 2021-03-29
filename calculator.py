@@ -1,4 +1,5 @@
-print('Welcome!This is your principal and interest calculator')
+#calculator using recursion 
+print('Welcome!This is your principal and interest amount calculator')
 p=float(input('Principal: '))
 r=float(input('interest rate:'))
 n=float(input('How many times the interest is yielded for a year?'))
@@ -9,7 +10,10 @@ def simple(p,r,n):
     return p(1+r*n)
 
 def compound(p,r,n,t):
-    return p*(1+r/n)**(n*t)
+    if t * n == 1:
+        return p * (1+r)
+    elif t * n > 1:   #조건 나누는 부분 헷갈림
+        return (1+r/n) * compound(p,r,n,t-1/n)
 
 if k==1:
     print('the amount of principal and interest is:', simple(p,r,n))
